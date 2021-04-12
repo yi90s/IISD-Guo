@@ -1,15 +1,15 @@
 var express = require('express');
-const StaffService = require('../services/StaffService');
+const Service = require('../services/Service');
 var router = express.Router();
-var staffService = new StaffService();
+var service = new Service();
 
 /* GET the time table of a single staff. */
 router.get('/:staffId/timetable', function(req, res, next) {
-    res.json(staffService.getTimeTable(req.params['staffId']));
+    res.json(service.getTimeTable(req.params['staffId']));
 });
 
 router.get('/', function(req, res, next){
-    res.json(staffService.getAllStaffs());
+    res.json(service.getAllStaffs());
 })
 
 module.exports = router;

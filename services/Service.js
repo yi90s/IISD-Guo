@@ -1,7 +1,7 @@
 const fs = require('fs');
 const parse = require('csv-parse/lib/sync');
 
-class StaffService{
+class Service{
     #staffs = null;
     #programs = null;
     #projects = null;
@@ -45,8 +45,16 @@ class StaffService{
         return timeTable;
     }
 
+    getProgramForecast(programId){
+        let projectsOfProgram = this.#projects.filter( project => project.programid == programId);
+        for(let project of projectsOfProgram){
+            let projectId = project.projectid;
+            //TODO
+        }
+    }
+
     getAllStaffs(){
-        return this.#staffs;
+        return this.#staffs;    
     }
 
     get staffs(){
@@ -54,4 +62,4 @@ class StaffService{
     }
 }
 
-module.exports = StaffService;
+module.exports = Service;

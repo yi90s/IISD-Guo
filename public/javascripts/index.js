@@ -48,6 +48,7 @@ function setUpTable(staffnumber){
             table = new Tabulator("#example-table", {
                 data: data, //assign data to table
                 autoColumns: true,
+                layout: "fitColumns"
             });
         },
         dataType: 'json'
